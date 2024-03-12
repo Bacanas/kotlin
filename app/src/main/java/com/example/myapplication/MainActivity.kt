@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         val bTLivreTimeB: Button = findViewById(R.id.tiroLivreB)
         val bReiniciar: Button = findViewById(R.id.reiniciarPartida)
 
-
+        //agora nós vamos criar listners 
+        
         bTresPontosTimeA.setOnClickListener { adicionarPontos(3, "A") }
 
         bDoisPontosTimeA.setOnClickListener { adicionarPontos(2, "A") }
@@ -57,11 +58,14 @@ class MainActivity : AppCompatActivity() {
 
         bTLivreTimeB.setOnClickListener { adicionarPontos(1, "B") }
 
+        //esse botão vai servir zerar os valores
         bReiniciar.setOnClickListener { reiniciarPartida() }
 
 
     }
 
+    //funções para adicionar os valores para cada time
+    
     fun adicionarPontos(pontos: Int, time: String) {
         if(time == "A"){
             pontuacaoTimeA += pontos
@@ -81,6 +85,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //essa fun zera as pontuações
     fun reiniciarPartida() {
         pontuacaoTimeA = 0
         pTimeA.setText(pontuacaoTimeA.toString())
